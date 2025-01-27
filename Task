@@ -1,0 +1,126 @@
+//İsmail Yiğit Önal 
+# User Management Screen 
+
+## Overview
+The User Management Screen is for admins to easily handle user accounts. You can add, edit, view, or enable/disable users.
+
+---
+
+## Features
+
+### What Should It Do?
+
+1. **Add New Users**:
+   - Include a form where admins can type in details like Username, Display Name, Phone, Email, User Role, and Enabled status.
+
+2. **See All Users**:
+   - Show a table with user info (Username, Email, Enabled status).
+   - Make the table sortable and filterable (example: hide users that are disabled).
+
+3. **Edit User Info**:
+   - Let admins click on a user in the table to edit their details.
+
+4. **Enable/Disable Users**:
+   - Allow admins to turn the Enabled status on or off for a user.
+
+5. **Search & Filter**:
+   - Add a checkbox to hide disabled users from the list.
+
+### Extra Features
+- Make the design work well on both desktops and mobile devices. 
+- Show clear messages if something goes wrong or if a task is successful.
+
+---
+
+## Page Setup
+
+### Layout
+
+#### Left Side:
+- A table showing user details:
+  - Columns for Username, Email, and Enabled (enabled with checkbox).
+  - Add options to sort and filter.
+  - A checkbox for 'Hide Disabled Users.'
+
+#### Right Side:
+- A form for adding or editing a user:
+  - Fields for:
+    - **Username** (text input)
+    - **Display Name** (text input)
+    - **Phone** (numeric input)
+    - **Email** (email input)
+    - **User Role** (dropdown or multi-select box)
+    - **Enabled** (checkbox).
+
+### Buttons
+- **Add New User**:
+  - Click this to open the form to add a new user.
+- **Save**:
+  - Saves the user info after adding or editing.
+
+### Table
+1. By default, show all users sorted by Username.
+2. Allow sorting by any column (Username, Email, Enabled).
+3. If “Hide Disabled Users” is checked, don’t show disabled users in the list.
+
+---
+
+## How It Works
+
+### What Happens First?
+- Show all users in the table.
+- The Hide Disabled Users checkbox is unchecked.
+- The New User form is blank and ready to fill.
+
+### When the Admin Does Stuff:
+
+1. **Adding a User**:
+   - Click “Add New User” to clear the form and open it.
+   - Fill in the details and click "Save" to add the user to the table.
+
+2. **Editing a User**:
+   - Click a user in the table to load their info into the form.
+   - Edit the details and click “Save” to update them.
+
+3. **Hiding Disabled Users**:
+   - Check “Hide Disabled Users” to filter out users that are disabled.
+
+---
+
+## Rules for Inputs
+
+- All fields in the New User form are required, except for 'Enabled'.
+- Email must look like a valid email (example: `user@example.com`).
+- Phone numbers should only have numbers. (example: 0 542 555 44 33)
+
+---
+
+## For Errors
+
+1. If required fields are empty, show an error message.
+2. If a user is added or updated successfully, show a success message.
+3. Highlight any incorrect fields in red (example: invalid email).
+
+---
+
+## Notes for Developers
+
+### Frontend:
+- Use a table library for displaying the user list (like DataTables).
+- Use validation libraries to check input fields (like making sure emails are valid).
+
+### Backend:
+- Provide APIs to handle adding, editing, and viewing user data.
+- Make sure user data is secure (example: passwords should be shown in this format: **** if user enter's show my password it will shown).
+
+
+**For Frontend Page**:
+| New User                |
+|-------------------------|
+|UserName:       |        |
+|Displaye_Name:  |        |
+|Phone:          |        |
+|Email:          |        |
+|User_Roles:     |        |
+|Enabled:        |  |     |
+|-------------------------|
